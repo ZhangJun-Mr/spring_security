@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="./css/main.css" th:href="@{/css/main.css}"/>
+</head>
+<body>
+<h1>login page</h1>
+<p>User 角色: user / 123456</p>
+<p>Admin 角色: admin / 123456</p>
+<!--/*@thymesVar id="loginError" type="templates"*/-->
+<p th:if="${loginError}" class="error">用户名密码错误</p>
+<form th:action="@{/login}" method="post">
+    <label for="username">用户名：</label>
+    <input type="text" id="username" name="username" autofocus/>
+    <br>
+    <label for="password">用户名：</label>
+    <input type="text" id="password" name="password"/>
+    <br>
+    <input type="submit" value="登录" />
+</form>
+<p><a href="/index" th:href="@{/index}">返回首页</a></p>
+
+</body>
+</html>
